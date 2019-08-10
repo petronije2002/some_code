@@ -91,7 +91,7 @@ def calculate_SMV(df): # provide DataFrame as an input of the function
     
     OPTIM_LIMES= description3.loc['50%','Staff Minutes per Visitor']
     
-    return OPTIM_LIMES, description3\
+    return OPTIM_LIMES, description3
 
    
 def splitting(data_set):
@@ -102,7 +102,7 @@ def splitting(data_set):
     data_set1 = data_set.reset_index().copy()
     
     try:
-        for ind,row in data_set1.iterrows():
+        for ind, _ in data_set1.iterrows():
             end_ind = ind + 7
 
 #             week_in = data_set1.iloc[ind:end_ind][['WeekNorm','DayNorm', 'Dubai Mall Traffic Norm']].values

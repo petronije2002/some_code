@@ -26,7 +26,7 @@ def dataset_preparation(df):
     
     df2 = df1.groupby(['Year','Month','Week','Day','Date']).apply(np.sum)[['Traffic']].sort_values(by='Date').reset_index().copy()
 
-    for ind, row in df2[df2['Traffic']==0].iterrows():
+    for ind, _ in df2[df2['Traffic']==0].iterrows():
         range1 = range(ind-7,ind)
         
         df2.at[ind,'Traffic'] = df2.iloc[range1]['Traffic'].mean()
